@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-5">Predict the Future of Startups</h1>
+    <form action="{% url 'mlmodel:predict' %}" method="post">
+        {% csrf_token %}
+        <!-- Input fields here -->
+        <div class="form-group">
+            <label for="activeDays">Active Days:</label>
+            <input type="number" class="form-control" id="activeDays" name="active_days" required>
+        </div>
+        <div class="form-group">
+            <label for="last_funding_year">Last Funding Year:</label>
+            <input type="number" id="last_funding_year" name="last_funding_year" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="first_funding_year">First Funding Year</label>
+            <input type="text" class="form-control" id="first_funding_year" name="first_funding_year" required>
+        </div>
+        <div class="form-group">
+            <label for="funding_total_usd">Funding Total USD</label>
+            <input type="text" class="form-control" id="funding_total_usd" name="funding_total_usd" required>
+        </div>
+        <div class="form-group">
+            <label for="founded_year">Founded Year</label>
+            <input type="text" class="form-control" id="founded_year" name="founded_year" required>
+        </div>
+        <div class="form-group">
+            <label for="investment_rounds">Investment Rounds</label>
+            <input type="text" class="form-control" id="investment_rounds" name="investment_rounds" required>
+        </div>
+        <div class="form-group">
+            <label for="first_milestone_year">First Milestone Year</label>
+            <input type="text" class="form-control" id="first_milestone_year" name="first_milestone_year" required>
+        </div>
+        <div class="form-group">
+            <label for="funding_rounds">Funding Rounds</label>
+            <input type="text" class="form-control" id="funding_rounds" name="funding_rounds" required>
+        </div>
+        <div class="form-group">
+            <label for="country_USA">Country USA</label>
+            <select class="form-control" id="country_USA" name="country_USA" required>
+                <option value="">--Select--</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="milestones">Milestones</label>
+            <input type="text" class="form-control" id="milestones" name="milestones" required>
+        </div>
+        <div class="form-group">
+            <label for="lat">Latitude</label>
+            <input type="text" class="form-control" id="lat" name="lat" required>
+        </div>
+        <div class="form-group">
+            <label for="lng">Longitude</label>
+            <input type="text" class="form-control" id="lng" name="lng" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+</div>
+{% endblock %}

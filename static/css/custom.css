@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('/static/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+/* Overlay to ensure the form stands out over the background image */
+.form-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better legibility */
+    z-index: 0;
+}
+
+/* Form container styling */
+.form-container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Input fields styling */
+input[type='text'],
+input[type='number'],
+select,
+button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+button {
+    background-color: #5cb85c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Labels styling */
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.result-container {
+    text-align: center;
+    padding: 40px 20px; /* Increased padding for better spacing */
+    max-width: 600px;
+    margin: 5% auto; /* Adjusted margin for better centering */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly opaque white for readability */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow for a 'floating' effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.result-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.result-header {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2em;
+}
+
+.result-body {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #444;
+}
+
+.result-body.operating { color: #4CAF50; }
+.result-body.acquired { color: #2196F3; }
+.result-body.closed { color: #f44336; }
+.result-body.ipo { color: #FFC107; }
+
+.result-explanation {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        margin-top: 10%;
+    }
+
+    label {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Predict Startup Acquisition Status</h2>
+  <form method="post" action="{% url 'mlmodel:predict' %}">  
+    {% csrf_token %}
+    <label for="active_days">Active Days:</label>
+    <input type="number" id="active_days" name="active_days" step="any" required>
+    
+    <label for="last_funding_year">Last Funding Year:</label>
+    <input type="number" id="last_funding_year" name="last_funding_year" step="any" required>
+    
+    <label for="first_funding_year">First Funding Year:</label>
+    <input type="number" id="first_funding_year" name="first_funding_year" step="any" required>
+    
+    <label for="funding_total_usd">Funding Total (USD):</label>
+    <input type="number" id="funding_total_usd" name="funding_total_usd" step="any" required>
+    
+    <label for="founded_year">Founded Year:</label>
+    <input type="number" id="founded_year" name="founded_year" required>
+    
+    <label for="investment_rounds">Investment Rounds:</label>
+    <input type="number" id="investment_rounds" name="investment_rounds" step="any" required>
+    
+    <label for="first_milestone_year">First Milestone Year:</label>
+    <input type="number" id="first_milestone_year" name="first_milestone_year" step="any" required>
+    
+    <label for="funding_rounds">Funding Rounds:</label>
+    <input type="number" id="funding_rounds" name="funding_rounds" required>
+    
+    <label for="country_USA">Country USA (1 for Yes, 0 for No):</label>
+    <input type="number" id="country_USA" name="country_USA" min="0" max="1" required>
+    
+    <label for="milestones">Milestones:</label>
+    <input type="number" id="milestones" name="milestones" step="any" required>
+    
+    <label for="lat">Latitude:</label>
+    <input type="number" id="lat" name="lat" step="any" required>
+    
+    <label for="lng">Longitude:</label>
+    <input type="number" id="lng" name="lng" step="any" required>
+    
+    <button type="submit">Predict</button>
+  </form>
+{% endblock %}

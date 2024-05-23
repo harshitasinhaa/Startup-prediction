@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="result-container">
+    <h1 class="result-header">Prediction Result</h1>
+    <div class="result-body {{ prediction_status }}">
+        The predicted fate of the startup is: {{ prediction }}
+    </div>
+    <p class="result-explanation">
+        Explanation or additional info about the prediction can go here.
+    </p>
+    <a href="{% url 'mlmodel:predict' %}" class="btn btn-primary">Make another prediction</a>
+</div>
+{% endblock %}
